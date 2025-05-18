@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Home() {
-  return (
-    <div>Home</div>
+  const [title, setTitle] = useState("")
+  
+  return (  
+    <div>
+        <input 
+            type="text" 
+            value={title} 
+            placeholder='Enter paste title' 
+            onChange={(e) => setTitle(e.target.value)}
+        />
+    </div>
   )
 }
 

@@ -1,3 +1,4 @@
+import { Children } from 'react'
 import './App.css'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
@@ -10,21 +11,34 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: 
+      <div>
+        <Navbar />
+        <Home />
+      </div>
+
     },
     {
       path: "/pastes",
-      element: <Paste />,
+      element: 
+      <div>
+        <Navbar />
+        <Paste />
+      </div>
     },
     {
       path: "/pastes/:id",
-      element: <ViewPaste />,
-    },
+      element: 
+      <div>
+        <Navbar />
+        <ViewPaste />
+      </div>
+       
+    }
   ]);
 
   return (
     <div>
-    <Navbar/>
     <RouterProvider router={router} />
     </div>
   )
